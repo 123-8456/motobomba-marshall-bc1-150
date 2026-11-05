@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motobomba Marshall BC1-150 | Plan de mantenimiento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07111f;--card:#0e1d33;--line:#1d3557;--azul:#00b4ff;--naranja:#ff7a1a;--txt:#e8f1fb;--mut:#8fa6c2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+nav{position:sticky;top:0;z-index:50;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px;background:rgba(7,17,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav a{color:var(--txt);text-decoration:none;font-size:.85rem;padding:6px 14px;border-radius:20px;transition:.2s}
+nav a:hover{background:var(--azul);color:#00111f}
+.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,#0b3a66 0,transparent 45%),radial-gradient(circle at 80% 80%,#5a2a06 0,transparent 40%),var(--bg)}
+.hero .gota{position:absolute;width:14px;height:14px;background:var(--azul);border-radius:0 50% 50% 50%;transform:rotate(45deg);opacity:.5;animation:caer linear infinite}
+@keyframes caer{from{top:-5%}to{top:105%}}
+.tag{display:inline-block;border:1px solid var(--naranja);color:var(--naranja);padding:4px 16px;border-radius:20px;font-size:.8rem;letter-spacing:2px;margin-bottom:18px}
+h1{font-size:clamp(2.2rem,7vw,4.8rem);font-weight:800;line-height:1.1}
+h1 span{background:linear-gradient(90deg,var(--azul),var(--naranja));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:18px auto 28px;color:var(--mut)}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--azul),#0077ff);color:#fff;text-decoration:none;padding:13px 30px;border-radius:30px;font-weight:600;box-shadow:0 8px 24px rgba(0,150,255,.35);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.04)}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.stat{background:rgba(14,29,51,.8);border:1px solid var(--line);border-radius:16px;padding:14px 24px}
+.stat b{display:block;font-size:1.6rem;color:var(--azul)}
+.stat small{color:var(--mut)}
+section{max-width:1150px;margin:auto;padding:70px 20px}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:8px}
+h2::after{content:"";display:block;width:70px;height:4px;background:var(--naranja);border-radius:4px;margin-top:8px}
+.sub{color:var(--mut);margin:12px 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;transition:.25s}
+.card:hover{transform:translateY(-6px);border-color:var(--azul);box-shadow:0 12px 30px rgba(0,180,255,.15)}
+.card h3{font-size:1rem;color:var(--azul)}
+.card small{color:var(--mut)}
+.dato b{display:block;font-size:1.05rem}
+.dato.pend b{color:var(--naranja)}
+.num{float:right;background:var(--naranja);color:#1a0b00;font-weight:800;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font-size:.8rem}
+.ok{display:inline-block;margin-top:8px;background:rgba(0,220,130,.15);color:#3be8a0;font-size:.75rem;padding:2px 10px;border-radius:10px}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filtros button{background:var(--card);color:var(--txt);border:1px solid var(--line);padding:8px 18px;border-radius:20px;cursor:pointer;font-family:inherit}
+.filtros button.on,.filtros button:hover{background:var(--azul);color:#00111f;border-color:var(--azul)}
+.tipo{font-size:.7rem;padding:2px 10px;border-radius:10px;font-weight:600}
+.Preventivo{background:rgba(0,180,255,.18);color:var(--azul)}
+.Predictivo{background:rgba(255,122,26,.18);color:var(--naranja)}
+.card ul{list-style:none;margin-top:10px;font-size:.82rem;color:var(--mut)}
+.card li b{color:var(--txt)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table{border-collapse:collapse;width:100%;min-width:760px;background:var(--card)}
+th,td{padding:10px;text-align:center;font-size:.85rem;border-bottom:1px solid var(--line)}
+th{background:#112a4a;color:var(--azul)}
+td:first-child,th:first-child{text-align:left;position:sticky;left:0;background:#112a4a;font-weight:600}
+td.x{background:linear-gradient(135deg,var(--azul),#0077ff);color:#fff;font-weight:800}
+.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.seg .card{border-left:5px solid var(--naranja)}
+.media{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
+.media figure,.media .video{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.media img{width:100%;display:block;min-height:260px;object-fit:cover;background:#0b1a2e}
+.media figcaption{padding:12px 16px;color:var(--mut);font-size:.85rem}
+.video{padding:14px;display:grid;place-items:center}
+.video iframe{width:100%;max-width:325px;height:580px;border:0;border-radius:12px}
+.aviso{background:rgba(255,122,26,.1);border:1px dashed var(--naranja);border-radius:12px;padding:12px 16px;margin-top:20px;font-size:.85rem;color:#ffc9a0}
+footer{text-align:center;padding:36px 20px;color:var(--mut);border-top:1px solid var(--line);font-size:.85rem}
+.rev{opacity:0;transform:translateY(30px);transition:.7s}
+.rev.vis{opacity:1;transform:none}
+@media(max-width:600px){section{padding:50px 16px}.video iframe{height:520px}}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#inicio">Inicio</a><a href="#ficha">Ficha técnica</a><a href="#despiece">Despiece</a>
+<a href="#plan">Plan</a><a href="#cronograma">Cronograma</a><a href="#seguridad">Seguridad</a><a href="#multimedia">Multimedia</a>
+</nav>
+
+<header class="hero" id="inicio">
+<div>
+<span class="tag">MANTENIMIENTO ELECTROMECÁNICO</span>
+<h1>Motobomba <span>Marshall BC1-150</span></h1>
+<p>Motobomba eléctrica centrífuga para bombeo de agua. Conoce su ficha técnica, sus componentes y el plan de mantenimiento que la mantiene funcionando todo el año.</p>
+<a class="btn" href="#ficha">Explorar el equipo ↓</a>
+<div class="stats">
+<div class="stat"><b>1/2 HP</b><small>Potencia</small></div>
+<div class="stat"><b>3.450</b><small>rpm aprox.</small></div>
+<div class="stat"><b>12</b><small>Componentes</small></div>
+<div class="stat"><b>11</b><small>Actividades</small></div>
+</div>
+</div>
+</header>
+
+<section id="ficha" class="rev">
+<h2>Ficha técnica</h2>
+<p class="sub">Datos de identificación del equipo. Los valores en naranja están pendientes de verificar en la placa o ficha técnica.</p>
+<div class="grid" id="gFicha"></div>
+</section>
+
+<section id="despiece" class="rev">
+<h2>Despiece del equipo</h2>
+<p class="sub">Los 12 componentes identificados en la práctica, con su función, referencia y estado.</p>
+<div class="grid" id="gDespiece"></div>
+</section>
+
+<section id="plan" class="rev">
+<h2>Plan de mantenimiento</h2>
+<p class="sub">Filtra las actividades por tipo y frecuencia.</p>
+<div class="filtros" id="filtros"></div>
+<div class="grid" id="gPlan"></div>
+</section>
+
+<section id="cronograma" class="rev">
+<h2>Cronograma anual</h2>
+<p class="sub">Meses en los que se ejecuta cada actividad.</p>
+<div class="scroll"><table id="tabla"></table></div>
+</section>
+
+<section id="seguridad" class="rev">
+<h2>Seguridad primero</h2>
+<p class="sub">Reglas clave antes de intervenir el equipo.</p>
+<div class="seg">
+<div class="card"><h3>⚡ Desenergizar</h3><p>Corta la alimentación y verifica ausencia de tensión antes de tocar conexiones.</p></div>
+<div class="card"><h3>🧤 Usa EPP</h3><p>Guantes y gafas de seguridad en limpieza e inspecciones.</p></div>
+<div class="card"><h3>🔌 Revisa la placa</h3><p>Confirma voltaje (110 V / 220 V) y frecuencia antes de conectar.</p></div>
+<div class="card"><h3>🔒 Equipo aislado</h3><p>Para revisar impulsor, sello y rodamientos, aísla el equipo por completo.</p></div>
+</div>
+</section>
+
+<section id="multimedia" class="rev">
+<h2>Galería y video</h2>
+<p class="sub">Conoce el equipo en imagen y en acción.</p>
+<div class="media">
+<figure>
+<img src="foto-2.jpg" alt="Motobomba eléctrica centrífuga Marshall">
+<figcaption>Motobomba eléctrica centrífuga Marshall</figcaption>
+</figure>
+<figure>
+<img src="foto-1.jpg" alt="Motobomba Marshall con motor a gasolina">
+<figcaption>Motobomba Marshall con motor a gasolina</figcaption>
+</figure>
+<div class="video">
+<video controls playsinline preload="metadata" src="video-motobomba.mp4" style="width:100%;max-width:325px;border-radius:12px"></video>
+</div>
+</div>
+<p class="aviso">Video: @lacasadelferretero (TikTok), usado con fines académicos.</p>
+</section>
+
+<footer>Motobomba Marshall BC1-150 · Asignatura Mantenimiento · UNIPAZ</footer>
+
+<script>
+const ficha=[["Equipo","Motobomba eléctrica centrífuga"],["Marca","MARSHALL"],["Modelo / referencia","BC1-150"],["Potencia","1/2 HP (≈ 0,37 kW)"],["Alimentación","Monofásica"],["Número de fases","1"],["Voltaje","110 V / 220 V según versión"],["Frecuencia","60 Hz"],["Velocidad","≈ 3.450 rpm"],["Aplicación","Bombeo de agua"],["Corriente nominal",""],["Caudal",""],["Altura máx. de bombeo",""],["Número de serie",""],["Clase de aislamiento",""],["Grado de protección",""]];
+const despiece=[["Motor eléctrico",1,"Convertir energía eléctrica en energía mecánica","Monofásico 1,5 HP / 3450 RPM / 110-220 V","Operativo"],["Eje",1,"Transmitir el movimiento al impulsor","AISI 420 / Ø 12-14 mm · acero inoxidable","Inspeccionado / Bueno"],["Impulsor / rodete",1,"Impulsar el agua","BC1-150-IMP (cerrado) · latón o tecnopolímero","Limpio / operativo"],["Carcasa hidráulica",1,"Contener y direccionar el flujo","Voluta BC1-150 · hierro fundido","Bueno"],["Sello mecánico",1,"Evitar fugas hacia el motor","Tipo 103 (5/8\") · cerámica, carbón y elastómero","Sin fugas"],["Rodamientos","Según diseño","Facilitar el giro del eje","6202-2RS / 6203-2RS","Verificado / operativo"],["Condensador","Según diseño","Apoyar el arranque del motor monofásico","35 µF / 250-450 V","Medido / operativo"],["Caja de conexiones",1,"Proteger las conexiones eléctricas","Bornera IP54 con prensaestopas","Bueno"],["Tapa de bomba",1,"Cerrar el conjunto hidráulico","Tapa frontal de acople · hierro fundido","Inspeccionada"],["Empaques / juntas","Según diseño","Evitar fugas","O-Ring cuerpo voluta · caucho NBR","Bueno / verificado"],["Tornillería","Varias","Fijar componentes","M6x20 mm / M8x25 mm · acero galvanizado","Completa / verificada"],["Ventilador",1,"Refrigerar el motor","Rodete de enfriamiento posterior · plástico técnico","Bueno"]];
+const plan=[["Inspección visual","Preventivo","Revisar estado externo, fugas, conexiones, ruido y condiciones generales","Mensual","20 min","Linterna y herramientas básicas"],["Limpieza externa","Preventivo","Limpiar carcasa y ventilación","Mensual","30 min","Paño y cepillo"],["Revisión de conexiones","Preventivo","Inspeccionar ajuste y estado de conexiones","Trimestral","30 min","Destornilladores y multímetro"],["Medición de corriente","Predictivo","Medir corriente de operación y comparar con placa","Trimestral","20 min","Pinza amperimétrica"],["Medición de voltaje","Predictivo","Verificar tensión de alimentación","Trimestral","15 min","Multímetro"],["Revisión de fugas","Preventivo","Inspeccionar carcasa, uniones y sello","Mensual","15 min","Inspección visual"],["Revisión de vibraciones","Predictivo","Observar o medir vibraciones anormales","Trimestral","20 min","Instrumento de vibración"],["Inspección del impulsor","Preventivo","Revisar desgaste y obstrucciones","Semestral","60 min","Herramientas"],["Inspección del sello","Preventivo","Revisar desgaste y evidencia de fuga","Semestral","45 min","Herramientas"],["Revisión de rodamientos","Predictivo","Revisar ruido, juego y condición","Semestral","45 min","Herramientas"],["Mantenimiento general","Preventivo","Limpieza, inspección y verificación integral","Anual","2–4 h","Kit de herramientas"]];
+const meses=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const todos=[1,1,1,1,1,1,1,1,1,1,1,1],trim=[0,0,1,0,0,1,0,0,1,0,0,1],sem=[0,0,0,0,0,1,0,0,0,0,0,1],anual=[0,0,0,0,0,0,0,0,0,0,0,1];
+const crono=[["Inspección visual",todos],["Limpieza externa",todos],["Revisión eléctrica",trim],["Medición de corriente",trim],["Medición de voltaje",trim],["Revisión de fugas",todos],["Revisión de vibraciones",trim],["Inspección del impulsor",sem],["Revisión del sello",sem],["Revisión de rodamientos",sem],["Mantenimiento general",anual]];
+const $=id=>document.getElementById(id);
+$("gFicha").innerHTML=ficha.map(f=>`<div class="card dato ${f[1]?"":"pend"}"><small>${f[0]}</small><b>${f[1]||"Pendiente · verificar en placa"}</b></div>`).join("");
+$("gDespiece").innerHTML=despiece.map((d,i)=>`<div class="card"><span class="num">${i+1}</span><h3>${d[0]}</h3><small>Cantidad: ${d[1]}</small><p style="margin:8px 0;font-size:.9rem">${d[2]}</p><small>${d[3]}</small><br><span class="ok">✔ ${d[4]}</span></div>`).join("");
+let filtro="Todas";
+const opts=["Todas","Preventivo","Predictivo","Mensual","Trimestral","Semestral","Anual"];
+function pintaPlan(){
+$("filtros").innerHTML=opts.map(o=>`<button class="${o==filtro?"on":""}" onclick="filtro='${o}';pintaPlan()">${o}</button>`).join("");
+$("gPlan").innerHTML=plan.filter(p=>filtro=="Todas"||p[1]==filtro||p[3]==filtro).map(p=>`<div class="card"><span class="tipo ${p[1]}">${p[1]}</span><h3 style="margin-top:8px">${p[0]}</h3><p style="font-size:.88rem;margin:6px 0">${p[2]}</p><ul><li>🔁 <b>${p[3]}</b></li><li>⏱ <b>${p[4]}</b></li><li>🧰 ${p[5]}</li></ul></div>`).join("");
+}
+pintaPlan();
+$("tabla").innerHTML="<tr><th>Actividad</th>"+meses.map(m=>`<th>${m}</th>`).join("")+"</tr>"+crono.map(c=>`<tr><td>${c[0]}</td>`+c[1].map(v=>v?'<td class="x">X</td>':"<td></td>").join("")+"</tr>").join("");
+const hero=document.querySelector(".hero");
+for(let i=0;i<18;i++){const g=document.createElement("i");g.className="gota";g.style.left=Math.random()*100+"%";g.style.animationDuration=(4+Math.random()*6)+"s";g.style.animationDelay=(-Math.random()*8)+"s";hero.appendChild(g)}
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("vis")),{threshold:.1});
+document.querySelectorAll(".rev").forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
